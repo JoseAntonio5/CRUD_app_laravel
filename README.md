@@ -36,10 +36,11 @@ Com esse projeto é possível ter uma base sólida para aprender e construir apl
 
 ### Screenshots
 >Página Index
-![]()
+![](./public/imgs/index.png)
 >Formulário de criação de usuário
-![]()
+![](./public/imgs/cadastro.png)
 >Formulário para editar um usuário
+![](./public/imgs/editar.png)
 
 #### Autor
 José Antônio ©️ 2023
