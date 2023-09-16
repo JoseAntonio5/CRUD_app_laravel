@@ -46,7 +46,6 @@ class UserController extends Controller {
         $newUser = User::create($data);
 
         return redirect(route('users.index'));
-
     }
 
     public function edit(User $user) {

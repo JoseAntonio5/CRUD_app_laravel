@@ -1,7 +1,6 @@
 @extends('layout.layout')
 
 @section('content')
-
     <div class="home-text">
         <h3>Criar um novo usuário</h3>
         <p>Preencha os campos abaixo para criar um novo usuário</p>
