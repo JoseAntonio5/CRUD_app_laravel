@@ -23,6 +23,12 @@ Uma das características distintivas do Laravel é sua adoção da arquitetura M
 
 Com esse projeto é possível ter uma base sólida para aprender e construir aplicativos web mais complexos no futuro.
 
+### To-do:
+- [x] Seguir o padrão RESTful nas rotas
+- [x] Implementar layouts para reutilização de código, flexibilidade e manutenção simplificada
+- [x] Fazer verificações e formatações nos formulários
+- [x] Fazer validação dos dados enviados pelos formulários
+
 ### Model *Pessoa* usado no projeto:
 
 | **Name**        | **Type** |
