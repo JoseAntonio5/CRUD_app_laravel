@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD App</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
-    <nav>
-        <h1>CRUD App</h1>
-        <a href="{{route('users.index')}}">Página Inicial</a>
-        <a href="{{route('users.create')}}">Criar Usuário</a>
-    </nav>
+@extends('layout.layout')
 
+@section('content')
     <div class="home-text">
         <h3>Todos os usuários</h3>
         <p>Lista completa com todos os usuários cadastrados no sistema.</p>
@@ -40,15 +28,17 @@
         <tbody>
         @foreach($users as $user)
             <tr>
-                <td>{{$user->nome_completo}}</td>
+                <td>
+                    <a href="{{route('users.show', ['user' => $user])}}">{{$user->nome_completo}}</a>
+                </td>
                 <td>{{$user->email}}</td>
-                <td>{{$user->data_nascimento}}</td>
+                <td>{{date('d/m/Y', strtotime($user->data_nascimento))}}</td>
                 <td>{{$user->telefone}}</td>
                 <td style="font-weight: bold; text-align: center">
                     <a href="{{route('users.edit', ['user' => $user])}}">Editar</a>
                 </td>
                 <td style="text-align: center">
-                    <form method="post" action="{{route('users.delete', ['user' => $user])}}">
+                    <form method="post" action="{{route('users.destroy', ['user' => $user])}}">
                         @csrf
                         @method('delete')
                         <input class="home-btn" type="submit" value="Excluir" />
@@ -58,9 +48,4 @@
         @endforeach
         </tbody>
     </table>
-
-    <footer>
-        <p>Desenvolvido por José Antônio &copy; 2023</p>
-    </footer>
-</body>
-</html>
+@endsection

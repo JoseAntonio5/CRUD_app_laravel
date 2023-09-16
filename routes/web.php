@@ -3,29 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 
-Route::get('/user/new', [UserController::class, 'create'])->name('users.create');
-
-Route::post('/user', [UserController::class, 'store'])->name('users.store');
-
-Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-
-Route::put('/user/{user}/editar', [UserController::class, 'update'])->name('users.update');
-
-Route::delete('/user/{user}/delete', [UserController::class, 'delete'])->name('users.delete');
+Route::prefix('users')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('users.index'); // Listar todos os usuários
+    Route::get('/{user}', [UserController::class, 'show'])->name('users.show'); // Exibir detalhes de um usuário
+    // Route::get('/create', [UserController::class, 'create'])->name('users.create');  // Formulário para criar um novo usuário
+    Route::post('/', [UserController::class, 'store'])->name('users.store'); // Salvar um novo usuário
+    Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit'); // Formulário para editar um usuário
+    Route::put('/{user}', [UserController::class, 'update'])->name('users.update'); // Atualizar um usuário
+    Route::delete('/{user}', [UserController::class, 'destroy'])->name('users.destroy'); // Excluir um usuário
+});

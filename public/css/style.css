@@ -110,6 +110,58 @@ form div input {
     text-decoration: underline;
 }
 
+.show-content {
+    width: 80%;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-content-name {
+    color: #6e6e6e;
+    font-weight: 800;
+}
+
+.show-content-info {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.show-content-info h3 {
+    text-align: center;
+}
+
+.show-content-info p {
+    margin-top: 1.8rem;
+}
+
+.show-content-buttons {
+    display: flex;
+}
+
+.show-content-btn {
+    width: 5rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    margin: 2rem 1rem;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+
+.show-content-btn.edit {
+    background-color: #cfe3f7;
+}
+
+.show-content-btn.destroy {
+    background-color: #f1bcbc;
+}
+
+.show-content-btn:hover {
+    opacity: 0.7;
+}
+
 footer {
     background-color: #282828;
     color: #fff;

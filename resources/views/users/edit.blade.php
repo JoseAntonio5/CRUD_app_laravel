@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD App | New</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
-    <nav>
-        <h1>CRUD App</h1>
-        <a href="{{route('users.index')}}">Página Inicial</a>
-        <a href="{{route('users.create')}}">Criar Usuário</a>
-    </nav>
+@extends('layout.layout')
 
+@section('content')
     <div class="home-text">
         <h1>Editar usuário: <span>{{$user->nome_completo}}</span></h1>
         <h3>Edite os dados do usuário</h3>
@@ -52,8 +40,5 @@
         <input class="form-btn" type="submit" value="Atualizar Usuário">
     </form>
 
-    <footer>
-        <p>Desenvolvido por José Antônio &copy; 2023</p>
-    </footer>
-</body>
-</html>
+    <script src="{{ asset('js/script.js') }}"></script>
+@endsection

@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD App | Edit</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-</head>
-<body>
-    <nav>
-        <h1>CRUD App</h1>
-        <a href="{{route('users.index')}}">Página Inicial</a>
-        <a href="{{route('users.create')}}">Criar Usuário</a>
-    </nav>
+@extends('layout.layout')
+
+@section('content')
 
     <div class="home-text">
         <h3>Criar um novo usuário</h3>
@@ -22,7 +11,7 @@
         @if($errors->any())
         <ul>
             @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
+                <li style="text-align: center; font-size: 1.2rem; color: red; margin-bottom: 1rem">{{$error}}</li>
             @endforeach
         </ul>
         @endif
@@ -51,9 +40,6 @@
         
         <input class="form-btn" type="submit" value="Criar Usuário">
     </form>
-
-    <footer>
-        <p>Desenvolvido por José Antônio &copy; 2023</p>
-    </footer>
-</body>
-</html>
+    
+    <script src="{{ asset('js/script.js') }}"></script>
+@endsection
